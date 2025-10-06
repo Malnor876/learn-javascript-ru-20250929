@@ -1,0 +1,7 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "maxLineLength": 120,
+    "singleQuote": true
+}
