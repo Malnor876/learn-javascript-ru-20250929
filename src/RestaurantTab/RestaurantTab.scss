@@ -1,0 +1,13 @@
+.restaurant-tab {
+    padding: 16px;
+    border: none;
+    border-radius: 5%;
+    background-color: global.$background2;
+    transition: all 0.5s;
+    &:hover,
+    &_active {
+        padding: 24px;
+        box-shadow: 0px 0px 8px 4px rgba(global.$accent-purple, 1.5);
+        transition: all 0.5s;
+    }
+}
