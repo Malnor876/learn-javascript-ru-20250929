@@ -1,6 +1,5 @@
 import { restaurants } from '@/mocks/restaurant.mock';
-import { RestaurantMenu } from '@/RestaurantMenu/RestaurantMenu';
-import { RestaurantReview } from '@/RestaurantReview/RestaurantReview';
+import { RestaurantInfo } from '@/RestaurantInfo/RestaurantInfo';
 import { RestaurantTab } from '@/RestaurantTab/RestaurantTab';
 import type { Restaurant } from '@/types';
 import { useState } from 'react';
@@ -24,21 +23,7 @@ export const RestaurantPage = () => {
                 })}
             </div>
             {activeRestaurant && (
-                <>
-                    <h2>{activeRestaurant.name}</h2>
-                    <h3>Меню</h3>
-                    <ul>
-                        {activeRestaurant.menu.map((menu) => (
-                            <RestaurantMenu key={menu.id} menu={menu} />
-                        ))}
-                    </ul>
-                    <h3>Отзывы</h3>
-                    <ul>
-                        {activeRestaurant.reviews.map((review) => (
-                            <RestaurantReview key={review.id} review={review} />
-                        ))}
-                    </ul>
-                </>
+                <RestaurantInfo restaurant={activeRestaurant} />
             )}
         </>
     );
