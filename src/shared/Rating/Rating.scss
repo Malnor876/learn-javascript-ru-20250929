@@ -1,0 +1,22 @@
+.rating {
+    display: flex;
+    button {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+    }
+    svg {
+        display: block;
+        fill: global.$background2;
+    }
+
+    &__star_active svg,
+    &__star:hover svg,
+    &__star:has(~ &__star:hover) svg {
+        fill: global.$primary !important;
+    }
+    &__star_active:hover ~ &__star svg {
+        fill: global.$background2 !important;
+    }
+}

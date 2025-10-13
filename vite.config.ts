@@ -4,6 +4,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+    publicDir: './src/assets',
     plugins: [react()],
     resolve: {
         alias: {

@@ -1,0 +1,19 @@
+.input-text {
+    input {
+        background-color: global.$background2;
+        border: none;
+        padding: 16px 8px 8px;
+        border-radius: global.$border-radius;
+        color: global.$primary;
+        width: 100%;
+    }
+    input:focus ~ label,
+    &_filled > label {
+        font-size: 12px;
+        transition: all 0.3s;
+        top: 2px;
+    }
+    input:focus-visible {
+        outline: none;
+    }
+}
