@@ -1,7 +1,16 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: global.$background;
     color: global.$text-lighter;
 }
+body,
+div {
+    margin: 0;
+    padding: 0;
+}
+
 button {
     color: global.$text-lighter;
 }
@@ -12,7 +21,20 @@ ul,
 li,
 a,
 p,
+input,
 span {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Roboto';
+}
+
+.float-label {
+    color: global.$accent-purple;
+    position: relative;
+    label {
+        position: absolute;
+        top: 16px;
+        left: 8px;
+        pointer-events: none;
+        transition: all 0.3s;
+    }
 }
