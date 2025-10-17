@@ -1,4 +1,5 @@
-import './RestaurantTab.scss';
+import classNames from 'classnames';
+import styles from './RestaurantTab.module.scss';
 export const RestaurantTab = ({
     name,
     active,
@@ -11,9 +12,9 @@ export const RestaurantTab = ({
     return (
         <button
             onClick={onClick}
-            className={
-                'restaurant-tab ' + (active ? 'restaurant-tab_active' : '')
-            }
+            className={classNames(styles.restaurantTab, {
+                [styles.restaurantTabActive]: active,
+            })}
         >
             {name}
         </button>

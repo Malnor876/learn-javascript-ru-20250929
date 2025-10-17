@@ -1,6 +1,6 @@
 import type { Menu } from '@/types';
 import { useState } from 'react';
-import './RestaurantDishListItem.scss';
+import './RestaurantDishListItem.module.scss';
 import { DishCounter } from '@/DishCounter/DishCounter';
 
 export const RestaurantDishListItem = ({ menu }: { menu: Menu }) => {

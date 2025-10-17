@@ -11,12 +11,12 @@
         fill: global.$background2;
     }
 
-    &__star_active svg,
-    &__star:hover svg,
-    &__star:has(~ &__star:hover) svg {
+    &StarActive svg,
+    &Star:hover svg,
+    &Star:has(~ &Star:hover) svg {
         fill: global.$primary !important;
     }
-    &__star_active:hover ~ &__star svg {
+    &Star_active:hover ~ &Star svg {
         fill: global.$background2 !important;
     }
 }
