@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './ScrollProgress.scss';
+import styles from './ScrollProgress.module.scss';
 export const ScrollProgress = () => {
     const [scrollProgressPercent, setScrollProgressPercent] = useState(0);
     useEffect(() => {
@@ -16,7 +16,7 @@ export const ScrollProgress = () => {
     }, []);
     return (
         <div
-            className="scroll-progress"
+            className={styles.scrollProgress}
             style={{ width: `${scrollProgressPercent}%` }}
         ></div>
     );

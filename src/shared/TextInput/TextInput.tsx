@@ -1,4 +1,5 @@
-import './TextInput.scss';
+import classNames from 'classnames';
+import styles from './TextInput.module.scss';
 interface TextInputProps {
     value: string;
     label: string;
@@ -7,7 +8,9 @@ interface TextInputProps {
 export const TextInput = ({ value, label, onChange }: TextInputProps) => {
     return (
         <div
-            className={`float-label input-text ${value ? 'input-text_filled' : ''}`}
+            className={classNames('float-label', styles.inputText, {
+                [styles.inputTextFilled]: value,
+            })}
         >
             <input
                 type="text"
