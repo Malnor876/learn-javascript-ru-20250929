@@ -18,6 +18,6 @@ export const ScrollProgress = () => {
         <div
             className="scroll-progress"
             style={{ width: `${scrollProgressPercent}%` }}
-        ></div>
+        />
     );
 };

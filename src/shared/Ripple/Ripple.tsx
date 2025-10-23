@@ -29,9 +29,6 @@ export const Ripple = React.memo(function Ripple() {
             rippleElementRef.current.classList.add(styles.rippleActive);
         }
     };
-    const handleAnimationEnd = () => {
-        setRippleStyles(undefined);
-    };
     useEffect(() => {
         const ripple = rippleElementRef.current;
         if (ripple && ripple.parentElement) {
@@ -50,7 +47,7 @@ export const Ripple = React.memo(function Ripple() {
             className={styles.ripple}
             ref={rippleElementRef}
             style={rippleStyles}
-            onAnimationEnd={handleAnimationEnd}
+            onAnimationEnd={() => setRippleStyles(undefined)}
         ></span>
     );
 });

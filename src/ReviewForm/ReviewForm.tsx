@@ -7,37 +7,38 @@ const initialState = {
     text: '',
     rating: 0,
 };
+const formReducer = (state, action) => {
+    switch (action.type) {
+        case 'NAME':
+            return {
+                ...state,
+                name: action.payload,
+            };
+        case 'TEXT':
+            return {
+                ...state,
+                text: action.payload,
+            };
+        case 'INCREMENT_RATING':
+            return {
+                ...state,
+                rating: Math.min(state.rating + 1, 5),
+            };
+        case 'DECREMENT_RATING':
+            return {
+                ...state,
+                rating: Math.max(state.rating - 1, 0),
+            };
+        case 'RESET':
+            return {
+                ...initialState,
+            };
+        default:
+            return state;
+    }
+};
 export const ReviewForm = () => {
-    const [formState, dispatch] = useReducer((state, action) => {
-        switch (action.type) {
-            case 'NAME':
-                return {
-                    ...state,
-                    name: action.payload,
-                };
-            case 'TEXT':
-                return {
-                    ...state,
-                    text: action.payload,
-                };
-            case 'INCREMENT_RATING':
-                return {
-                    ...state,
-                    rating: Math.min(state.rating + 1, 5),
-                };
-            case 'DECREMENT_RATING':
-                return {
-                    ...state,
-                    rating: Math.max(state.rating - 1, 0),
-                };
-            case 'RESET':
-                return {
-                    ...initialState,
-                };
-            default:
-                return state;
-        }
-    }, initialState);
+    const [formState, dispatch] = useReducer(formReducer, initialState);
     return (
         <form onSubmit={(e) => e.preventDefault()}>
             <div>
