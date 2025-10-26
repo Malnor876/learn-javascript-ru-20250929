@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './Icon.scss';
+import './Icon.module.scss';
 import { useSvgIcon } from './useSvgIcon';
 
 interface IconProps {

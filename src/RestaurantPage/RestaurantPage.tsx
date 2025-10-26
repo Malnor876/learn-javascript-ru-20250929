@@ -3,6 +3,7 @@ import { RestaurantInfo } from '@/RestaurantInfo/RestaurantInfo';
 import { RestaurantTab } from '@/RestaurantTab/RestaurantTab';
 import type { Restaurant } from '@/types';
 import { useState } from 'react';
+import styles from './RestaurantPage.module.scss';
 
 export const RestaurantPage = () => {
     const [activeRestaurant, setActiveRestaurant] = useState<Restaurant | null>(
@@ -10,7 +11,7 @@ export const RestaurantPage = () => {
     );
     return (
         <>
-            <div className="restaurants-tabs">
+            <div className={styles.restaurantsTabs}>
                 {restaurants.map((restaurant) => {
                     return (
                         <RestaurantTab

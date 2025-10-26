@@ -1,4 +1,4 @@
-import './Counter.scss';
+import styles from './Counter.module.scss';
 interface CounterProps {
     value: number;
     onChange: (action: 'decrement' | 'increment') => void;
@@ -7,7 +7,7 @@ export const Counter = ({ value, onChange }: CounterProps) => {
     return (
         <>
             <button
-                className="counter__button"
+                className={styles.counterButton}
                 onClick={(event) => {
                     event.preventDefault();
                     onChange('decrement');
@@ -17,7 +17,7 @@ export const Counter = ({ value, onChange }: CounterProps) => {
             </button>
             {value}
             <button
-                className="counter__button"
+                className={styles.counterButton}
                 onClick={(event) => {
                     event.preventDefault();
                     onChange('increment');
