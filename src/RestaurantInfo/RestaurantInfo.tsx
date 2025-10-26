@@ -1,8 +1,9 @@
 import { RestaurantDishListItem } from '@/RestaurantDishListItem/RestaurantDishListItem';
 import { RestaurantReviewListItem } from '@/RestaurantReviewListItem/RestaurantReviewListItem';
+import { ReviewForm } from '@/ReviewForm/ReviewForm';
 import type { Restaurant } from '@/types';
 
-export interface RestaurantInfoProps {
+interface RestaurantInfoProps {
     restaurant: Restaurant;
 }
 export const RestaurantInfo = ({ restaurant }: RestaurantInfoProps) => {
@@ -21,6 +22,7 @@ export const RestaurantInfo = ({ restaurant }: RestaurantInfoProps) => {
                     <RestaurantReviewListItem key={review.id} review={review} />
                 ))}
             </ul>
+            <ReviewForm />
         </>
     );
 };

@@ -1,4 +1,4 @@
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import './App.scss';
 import { RestaurantPage } from './RestaurantPage/RestaurantPage';
 
