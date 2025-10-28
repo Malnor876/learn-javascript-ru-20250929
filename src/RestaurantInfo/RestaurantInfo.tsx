@@ -1,12 +1,15 @@
+import { AuthValueContext } from '@/AuthContext/AuthContext';
 import { RestaurantDishListItem } from '@/RestaurantDishListItem/RestaurantDishListItem';
 import { RestaurantReviewListItem } from '@/RestaurantReviewListItem/RestaurantReviewListItem';
 import { ReviewForm } from '@/ReviewForm/ReviewForm';
 import type { Restaurant } from '@/types';
+import { useContext } from 'react';
 
 interface RestaurantInfoProps {
     restaurant: Restaurant;
 }
 export const RestaurantInfo = ({ restaurant }: RestaurantInfoProps) => {
+    const isLogin = useContext(AuthValueContext);
     return (
         <>
             <h2>{restaurant.name}</h2>
@@ -22,7 +25,7 @@ export const RestaurantInfo = ({ restaurant }: RestaurantInfoProps) => {
                     <RestaurantReviewListItem key={review.id} review={review} />
                 ))}
             </ul>
-            <ReviewForm />
+            {isLogin && <ReviewForm />}
         </>
     );
 };

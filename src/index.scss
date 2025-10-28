@@ -1,18 +1,21 @@
+@use './theme.scss';
 * {
     box-sizing: border-box;
 }
+
 body {
-    background-color: global.$background;
-    color: global.$text-lighter;
+    background-color: global.$background-primary;
+    color: global.$text-primary;
 }
 body,
-div {
+div,
+p {
     margin: 0;
     padding: 0;
 }
 
 button {
-    color: global.$text-lighter;
+    color: global.$text-primary;
 }
 ul {
     list-style: none;

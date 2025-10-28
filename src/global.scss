@@ -1,10 +1,9 @@
-$background: #2d303e;
-$background2: #1f1d2b;
-$text-lighter: #e0e6e9;
-$text-light: #abbbc2;
-$text-gray: #889898;
-$text-dark: #3b5162;
-$primary: #ea7c69;
+$background-primary-dark: #2d303e;
+$background-secondary-dark: #1f1d2b;
+$text-primary-dark: #e0e6e9;
+$text-secondary-dark: #abbbc2;
+$accent-primary-dark: #9290fe;
+$primary-dark: #ea7c69;
 $secondary: #9288e0;
 $accent-red: #ff7ca3;
 $accent-blue: #65b0f6;
@@ -13,3 +12,15 @@ $accent-orange: #ffb572;
 $accent-green: #50d1aa;
 
 $border-radius: 8px;
+
+$background-primary-light: #ffffff;
+$background-secondary-light: #06b6d4;
+$text-primary-light: #000000;
+$text-secondary-light: #889898;
+$accent-primary-light: #a4bcd4;
+
+$background-primary: var(--background-primary);
+$text-primary: var(--text-primary);
+$background-secondary: var(--background-secondary);
+$text-secondary: var(--text-secondary);
+$accent-primary: var(--accent-primary);
