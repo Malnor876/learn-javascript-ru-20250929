@@ -1,0 +1,15 @@
+@use './global.scss';
+:root:has(div.light) {
+    --background-primary: #{global.$background-primary-light};
+    --text-primary: #{global.$text-primary-light};
+    --background-secondary: #{global.$background-secondary-light};
+    --text-secondary: #{global.$text-secondary-light};
+    --accent-primary: #{global.$accent-primary-light};
+}
+:root:has(div.dark) {
+    --background-primary: #{global.$background-primary-dark};
+    --text-primary: #{global.$text-primary-dark};
+    --background-secondary: #{global.$background-secondary-dark};
+    --text-secondary: #{global.$text-secondary-dark};
+    --accent-primary: #{global.$accent-primary-dark};
+}
