@@ -1,20 +1,27 @@
 import { Counter } from '@/shared/Counter/Counter';
+import {
+    addToCart,
+    removeFromCart,
+    selectAmountById,
+} from '@/store/cart.slice';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 interface DishCounterProps {
-    value: number;
+    id: string;
     max: number;
-    onChange: (value: number) => void;
 }
-export const DishCounter = ({
-    value,
-    onChange,
-    max = 100,
-}: DishCounterProps) => {
+export const DishCounter = ({ id, max = 100 }: DishCounterProps) => {
+    const dispatch = useAppDispatch();
+    const count = useAppSelector((state) => selectAmountById(state, id));
     const handleCounterChange = (action: 'increment' | 'decrement') => {
         if (action === 'increment') {
-            onChange(Math.min(value + 1, max));
+            if (count < max) {
+                dispatch(addToCart(id));
+            }
         } else {
-            onChange(Math.max(value - 1, 0));
+            if (count > 0) {
+                dispatch(removeFromCart(id));
+            }
         }
     };
-    return <Counter value={value} onChange={handleCounterChange} />;
+    return <Counter value={count} onChange={handleCounterChange} />;
 };

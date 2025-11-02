@@ -1,31 +1,32 @@
-import { restaurants } from '@/mocks/restaurant.mock';
 import { RestaurantInfo } from '@/RestaurantInfo/RestaurantInfo';
 import { RestaurantTab } from '@/RestaurantTab/RestaurantTab';
-import type { Restaurant } from '@/types';
 import { useState } from 'react';
 import styles from './RestaurantPage.module.scss';
+import { useSelector } from 'react-redux';
+import { selectRestaurantsIds } from '@/store/restaurants.slice';
+import { Cart } from '@/Cart/Cart';
 
 export const RestaurantPage = () => {
-    const [activeRestaurant, setActiveRestaurant] = useState<Restaurant | null>(
+    const restaurants = useSelector(selectRestaurantsIds);
+    const [activeRestaurant, setActiveRestaurant] = useState<string | null>(
         restaurants[0]
     );
     return (
         <>
+            <Cart />
             <div className={styles.restaurantsTabs}>
-                {restaurants.map((restaurant) => {
+                {restaurants.map((restaurantId) => {
                     return (
                         <RestaurantTab
-                            name={restaurant.name}
-                            key={restaurant.id}
-                            active={restaurant.id === activeRestaurant?.id}
-                            onClick={() => setActiveRestaurant(restaurant)}
+                            id={restaurantId}
+                            key={restaurantId}
+                            active={restaurantId === activeRestaurant}
+                            onClick={() => setActiveRestaurant(restaurantId)}
                         />
                     );
                 })}
             </div>
-            {activeRestaurant && (
-                <RestaurantInfo restaurant={activeRestaurant} />
-            )}
+            {activeRestaurant && <RestaurantInfo id={activeRestaurant} />}
         </>
     );
 };
