@@ -1,4 +1,4 @@
-import { CartListItem } from '@/CartListItem/CartListItem';
+import { CartListItem } from '@/Cart/CartListItem/CartListItem';
 import { selectCartItemsIds } from '@/store/cart.slice';
 import { useAppSelector } from '@/store/store';
 

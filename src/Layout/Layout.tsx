@@ -3,16 +3,19 @@ import { useContext, type ReactElement } from 'react';
 import { ScrollProgress } from '../shared/ScrollProgress/ScrollProgress';
 import { Header } from '@/Header/Header';
 import { ThemeContext } from '@/ThemeContext/ThemeContext';
+import { Outlet } from 'react-router';
+import { Cart } from '@/Cart/Cart';
 
-export const Layout = ({ children }: { children: ReactElement }) => {
+export const Layout = () => {
     const theme = useContext(ThemeContext);
     return (
         <>
             <div className={theme}>
                 <ScrollProgress />
                 <Header />
+                <Cart />
                 <div className={style.content}>
-                    {children}
+                    <Outlet />
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quidem deleniti, natus aliquid minima fugit labore

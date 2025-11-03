@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './ScrollProgress.module.scss';
 export const ScrollProgress = () => {
-    console.log('styles', styles);
     const [scrollProgressPercent, setScrollProgressPercent] = useState(0);
     useEffect(() => {
         const scrollProgress = () => {
