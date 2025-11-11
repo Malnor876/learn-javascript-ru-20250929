@@ -3,7 +3,7 @@ import { RestaurantMenu } from './RestaurantMenu/RestaurantMenu';
 import { RestaurantPage } from './RestaurantPage/RestaurantPage';
 import { RestaurantReviews } from './RestaurantReviews/RestaurantReviews';
 
-export const restaurants_routes = {
+export const restaurantsRoutes = {
     path: 'restaurants',
     Component: RestaurantPage,
     children: [

@@ -10,7 +10,7 @@ export const App = () => {
         <Provider store={store}>
             <AuthProvider>
                 <ThemeProvider defaultTheme="dark">
-                    <RouterProvider router={router}></RouterProvider>
+                    <RouterProvider router={router} />
                 </ThemeProvider>
             </AuthProvider>
         </Provider>
