@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import './RestaurantDishListItem.module.scss';
-import { DishCounter } from '@/DishCounter/DishCounter';
 import { AuthValueContext } from '@/AuthContext/AuthContext';
 import { useAppSelector } from '@/store/store';
-import { selectDishById } from '@/store/dishes.slice';
 import { useNavigate } from 'react-router';
+import { selectDishById } from '@/store/dish/dishes.slice';
 
 export const RestaurantDishListItem = ({ id }: { id: string }) => {
     const menu = useAppSelector((state) => selectDishById(state, id));

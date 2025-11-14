@@ -1,4 +1,4 @@
-import { selectReviewById } from '@/store/reviews.slice';
+import { selectReviewById } from '@/store/review/reviews.slice';
 import { useAppSelector } from '@/store/store';
 
 export const RestaurantReviewListItem = ({ id }: { id: string }) => {

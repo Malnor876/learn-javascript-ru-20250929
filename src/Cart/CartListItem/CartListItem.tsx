@@ -1,5 +1,5 @@
 import { selectAmountById } from '@/store/cart.slice';
-import { selectDishById } from '@/store/dishes.slice';
+import { selectDishById } from '@/store/dish/dishes.slice';
 import { useAppSelector } from '@/store/store';
 
 export const CartListItem = ({ id }) => {
