@@ -1,21 +1,33 @@
 import { useParams } from 'react-router';
 import { RestaurantDishListItem } from './RestaurantDishListItem/RestaurantDishListItem';
 import { useAppSelector } from '@/store/store';
-import { selectRestaurantById } from '@/store/restaurants.slice';
+import { getDishByRestaurantId } from '@/store/dish/get-dish-by-restaurant-id';
+import { Loader } from '@/shared/Loader/Loader';
+import { useRequest } from '@/hooks/use-request';
+import { selectDishesIds } from '@/store/dish/dishes.slice';
+import { StoreRequestStatus } from '@/store/types';
+import { ErrorInfo } from '@/shared/Error/ErrorInfo';
 
 export const RestaurantMenu = () => {
     const { id } = useParams();
-    const { menu: menuIds } = useAppSelector((state) =>
-        selectRestaurantById(state, id)
-    );
+    console.log('id', id);
+    const status = useRequest(getDishByRestaurantId, id);
+    const menuIds = useAppSelector(selectDishesIds);
+
     return (
         <>
             <h3>Меню</h3>
-            <ul>
-                {menuIds.map((menuId) => (
-                    <RestaurantDishListItem key={menuId} id={menuId} />
-                ))}
-            </ul>
+            {status === StoreRequestStatus.FULFILLED ? (
+                <ul>
+                    {menuIds.map((menuId) => (
+                        <RestaurantDishListItem key={menuId} id={menuId} />
+                    ))}
+                </ul>
+            ) : (
+                <Loader />
+            )}
+
+            {status === StoreRequestStatus.REJECTED && <ErrorInfo />}
         </>
     );
 };
